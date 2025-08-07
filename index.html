@@ -114,7 +114,7 @@
             margin: 15px auto 0;
         }
         
-      <header>
+   <header id="siteHeader">
   <div class="header-container">
     <h1>My Website</h1>
     <nav>
@@ -138,7 +138,7 @@
         left: 0;
         width: 100%;
         z-index: 1000;
-        background-color: var(--light, #fff); /* fallback white */
+        background-color: var(--light, #fff);
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         transition: opacity 0.3s ease; /* smooth fade */
     }
@@ -160,7 +160,8 @@
 
 <!-- JS -->
 <script>
-    const header = document.querySelector("header");
+document.addEventListener("DOMContentLoaded", function() {
+    const header = document.getElementById("siteHeader");
 
     window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
@@ -168,8 +169,9 @@
         const opacity = Math.max(1 - scrollY / fadePoint, 0);
         header.style.opacity = opacity;
     });
+});
 </script>
-        
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -1117,6 +1119,7 @@ Anchorage, AK 99503</a></li>
 </body>
 
 </html>
+
 
 
 
