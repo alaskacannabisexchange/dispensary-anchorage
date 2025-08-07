@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Alaska Cannabis Exchange</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reusing your existing styles */
+        :root {
+            --primary: #1a3e2f;
+            --secondary: #4a6b5b;
+            --accent: #e8c39e;
+            --background: #f8f5f0;
+            --text: #333333;
+            --highlight: #8cb560;
+            --light: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--highlight);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--highlight);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        /* Header Styles (same as main site) */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            height: 80px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--highlight);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 500;
+            position: relative;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--highlight);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        /* About Hero Section */
+        .about-hero {
+            height: 60vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1603775026434-8b729d7f5e0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .about-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+        
+        /* Our Story Section */
+        .our-story {
+            background-color: var(--light);
+        }
+        
+        .story-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .story-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .story-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .story-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        /* Mission Section */
+        .mission {
+            background-color: var(--background);
+            text-align: center;
+        }
+        
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .mission-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .mission-icon {
+            font-size: 2.5rem;
+            color: var(--highlight);
+            margin-bottom: 20px;
+        }
+        
+        /* Team Section */
+        .team {
+            background-color: var(--light);
+        }
+        
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .member-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid var(--accent);
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--light);
+                transition: all 0.5s ease;
+                z-index: 999;
+                padding-top: 30px;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+        }
+                /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--accent);
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzVGTanppmh6ezuuligWt9thnEc6YpkstivUOkQbmNss9EtWZRypB0jKhC6Cfb3Rd406XPwLUB1WBQ3TtFe-jfrUOfwFFpDNuRdhODFjl1k1CuwsgakjwcG4OloqUAkTJ5NseLK1-kyEmbkFfRhL3W_nYMQp5QtV5jE4RDeLStEQatGWSktlozaUHMKI_v/s500/LOGO-ACE-Blue1.png" alt="Alaska Cannabis Exchange Logo">
+                <span class="logo-text">Alaska <span>Cannabis</span> Exchange</span>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="testimonials.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero Section with Background Image -->
+<section class="about-hero">
+  <div class="about-hero-content container">
+    <h1>Our Story</h1>
+    <p style="font-size: 1.2rem; color: var(--accent);">Rooted in Alaska, growing with our community</p>
+  </div>
+</section>
+
+<style>
+.about-hero {
+  background-image: url('https://media.istockphoto.com/id/1194014820/photo/close-up-of-a-young-hemp-or-marijuana-plant-growing-in-a-nursery-getting-ready-to-be-planted.jpg?s=612x612&w=0&k=20&c=a43cVyxfyocBSMUrUfhvlr3qHz4_18bLN9maXVAM14I=');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 120px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 1;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  color: #1abc9c;
+}
+</style>
+
+
+    <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="container">
+            <div class="story-container">
+                <div class="story-content">
+                    <h2>From Humble Beginnings</h2>
+                    <p>Founded in 2016, Alaska Cannabis Exchange began as a small dispensary with a big vision - to provide Anchorage with the highest quality cannabis products while fostering education and responsible consumption.</p>
+                    <p>What started as a single storefront on Spenard Road has grown into Anchorage's premier cannabis destination, thanks to our loyal customers and dedicated team.</p>
+                    <p>Our founders, longtime Alaskan residents and cannabis advocates, saw an opportunity to create a dispensary that combined professional retail standards with deep product knowledge and community values.</p>
+                    <a href="#mission" class="btn">Our Mission</a>
+                </div>
+                <div class="story-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiu59QwcNj_6X043cBGEdv2Hv2Sd-qz_uAEjSjlmfWUV5DAEKXCYfcu5p2ak57MlNzF5v1SztdOllKxVaRHCMAL6xl0a6xmhXe0fVFWXfQsnyGsLwQ3RfSFHQIXTZDiH60-GjIjFKckbftEYqQTd7cECkhWqLC8WuR6nPrtZbAlc3Ge6fr1wa8-PvsfL_k0/s1600/Extracts%20(1" alt="Alaska Cannabis Exchange early days">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <h2 class="section-title">Our Mission & Values</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto;">At Alaska Cannabis Exchange, we're committed to more than just selling products - we're building a cannabis culture rooted in education, quality, and community.</p>
+            
+            <div class="mission-cards">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Quality First</h3>
+                    <p>We meticulously source our products from Alaska's finest growers, ensuring premium quality, purity, and potency in every item we carry.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>Our knowledgeable staff provides personalized guidance to help customers make informed decisions about cannabis products and consumption.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>We actively support local organizations and initiatives, believing in cannabis as a force for positive change in our Anchorage community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+<section class="team-section" id="team">
+  <div class="team-container">
+    <h2 class="section-title">Meet Our Founder</h2>
+    
+    <div class="team-content">
+      <div class="team-image">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhv_HKbb7pXxEH0TXCoYWnkg9UXKkcMawERV_zf4yN3vfxhxQQSH3eD9M7iiuO5uhgpPgQJY1bXLcImyg4TmNHcUII248bkl6jxX5EWND5Qxc-ShBZiS3kWTmVYABPpD4bPHxJuyIQwiEf7tz49AJJm6VkX5R-P_jvTD1Y26BjHYDfB9iqXihGhyqoU6z97/s300/Aaron-Ralph-ALASKA-cannabis-exchange.jpg" alt="Aaron Ralph">
+      </div>
+      <div class="team-text">
+        <h3>Aaron Ralph</h3>
+        <p><strong>Founder / Owner</strong></p>
+        <p>Aaron's journey began in California, growing up in a family that prioritized exploration over possessions. By age 12, he had traveled to every U.S. state, developing a deep connection to nature and self-reliance. In 1984, his family's travels brought them to Alaska—and it has been his home ever since.</p>
+        <p>For nearly two decades, Aaron has been a passionate advocate for cannabis reform, dedicating his knowledge and energy to educating individuals, healthcare professionals, and policymakers about its benefits. His commitment to wellness, community, and plant-based healing led him to launch Alaska Cannabis Exchange in 2015, inspired by his best friend Geneva Cowen.</p>
+        <p>Despite the challenges—including Geneva’s heartbreaking passing—Aaron has grown ACE into a trusted, respected name in Alaska's cannabis community. His mission remains rooted in education, access, and compassion.</p>
+      </div>
+    </div>
+
+    <div class="full-team-photo">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyXBIfiVIreV4O23Zhxlrt8Ea0I-bQersudUnkiv6DlIHGFZxaY9VwaUlTcjtODPaqAsuBKzJyJl6m0Zcxi75fLvAWX0HeqkuJKXa4QhzjM1DDD1QiicuOk4KTMtZVWgWBakqfkkbMuGQpEQieH-tmzWtMxZ3qvIIp-aynl-wkMExyUklUAcIQ8ApLab57/s1000/IMAGE-Staff1.jpg" alt="ACE Team Photo">
+    </div>
+  </div>
+</section>
+
+<style>
+.team-section {
+  background: #f7f9fa;
+  padding: 80px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #1abc9c;
+  margin-bottom: 40px;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
+}
+
+.team-image img {
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.team-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.team-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.team-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.full-team-photo {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.full-team-photo img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-text {
+    padding: 0 10px;
+  }
+}
+</style>
+
+
+   <!-- Footer -->
+   <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Alaska Cannabis Exchange</h3>
+                    <p>Anchorage's premier destination for high-quality cannabis products and expert guidance. Serving the community with integrity since 2016.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="services.html">Products</a></li>
+                        <li><a href="index.html#testimonials">Reviews</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Concentrates</a></li>
+                        <li><a href="services.html">Edibles</a></li>
+                        <li><a href="services.html">Topicals</a></li>
+                        <li><a href="services.html">CBD</a></li>
+                        <li><a href="services.html">Apparel</a></li>
+                        <li><a href="services.html">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Reach Out to Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">2906 Spenard Rd
+
+Anchorage, AK 99503</a></li>
+                        <li><a href="#">(907) 301-4208y</a></li>
+                        <li><a href="#">Open 7 Days a Week</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Alaska Cannabis Exchange. All rights reserved. For adults 21+ only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('main-nav');
+        
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            hamburger.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Testimonial slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                showTestimonial(index);
+            });
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            let nextTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(nextTestimonial);
+        }, 5000);
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically send the form data to a server
+                // For this example, we'll just show an alert
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>

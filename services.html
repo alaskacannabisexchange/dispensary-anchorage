@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products & Services | Alaska Cannabis Exchange</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #001F3F;
+            --secondary: #333333;
+            --accent: #DDDDDD;
+            --background: #FFFFFF;
+            --text: #000000;
+            --highlight: #4CAF50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--highlight);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--highlight);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--highlight);
+            margin: 15px auto 0;
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--background);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+         .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--highlight);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 500;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--highlight);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .page-hero {
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .page-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+        
+        /* Services Detail Section */
+        .service-detail {
+            background-color: var(--background);
+        }
+        
+        .service-category {
+            margin-bottom: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .service-category:nth-child(even) .service-image {
+            order: -1;
+        }
+        
+        .service-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .service-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .product-list {
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+        
+        .product-list li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .product-list li:before {
+            content: '•';
+            color: var(--highlight);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .service-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .testimonials .section-title {
+            color: white;
+        }
+        
+        .testimonials .section-title:after {
+            background-color: var(--highlight);
+        }
+        
+        /* Footer */
+              /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--accent);
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--background);
+                transition: all 0.5s ease;
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .page-hero p {
+                font-size: 1rem;
+            }
+            
+            .service-category, .service-category:nth-child(even) .service-image {
+                flex-direction: column;
+            }
+            
+            .service-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.2rem;
+            }
+            
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <!-- Replace with actual logo -->
+                <img src=https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzVGTanppmh6ezuuligWt9thnEc6YpkstivUOkQbmNss9EtWZRypB0jKhC6Cfb3Rd406XPwLUB1WBQ3TtFe-jfrUOfwFFpDNuRdhODFjl1k1CuwsgakjwcG4OloqUAkTJ5NseLK1-kyEmbkFfRhL3W_nYMQp5QtV5jE4RDeLStEQatGWSktlozaUHMKI_v/s500/LOGO-ACE-Blue1.png" alt="Alaska Cannabis Exchange Logo">
+                <span class="logo-text">Alaska <span>Cannabis</span> Exchange</span>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="index.html#testimonials">Reviews</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Section -->
+    <section class="page-hero">
+        <div class="page-hero-content container">
+            <h1>Our Premium Cannabis Products</h1>
+            <p>Discover Alaska's finest selection of cannabis products, carefully curated for quality, potency, and exceptional experiences.</p>
+        </div>
+    </section>
+
+    <!-- Services Detail Section -->
+    <section class="service-detail">
+        <div class="container">
+            <h2 class="section-title">Explore Our Product Categories</h2>
+            
+            <!-- Concentrates -->
+            <div class="service-category">
+                <div class="service-content">
+                    <h3>Concentrates</h3>
+                    <p>Experience the pure essence of cannabis with our premium concentrates. These highly potent extracts offer intense flavors and effects, perfect for experienced consumers seeking powerful experiences.</p>
+                    <p>Our concentrates are carefully extracted using state-of-the-art methods to preserve terpenes and cannabinoids, ensuring you get the full spectrum of benefits from each strain.</p>
+                    <ul class="product-list">
+                        <li>Shatter - Glass-like consistency with high THC content</li>
+                        <li>Live Resin - Preserves fresh plant terpenes for exceptional flavor</li>
+                        <li>Wax/Budder - Easy-to-handle textures with rich aromas</li>
+                        <li>Rosin - Solventless extract made with heat and pressure</li>
+                        <li>Diamonds & Sauce - THCA crystals in terpene-rich sauce</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiu59QwcNj_6X043cBGEdv2Hv2Sd-qz_uAEjSjlmfWUV5DAEKXCYfcu5p2ak57MlNzF5v1SztdOllKxVaRHCMAL6xl0a6xmhXe0fVFWXfQsnyGsLwQ3RfSFHQIXTZDiH60-GjIjFKckbftEYqQTd7cECkhWqLC8WuR6nPrtZbAlc3Ge6fr1wa8-PvsfL_k0/s1600/Extracts%20(1" alt="Cannabis Concentrates">
+                </div>
+            </div>
+            
+            <!-- Edibles -->
+            <div class="service-category">
+                <div class="service-content">
+                    <h3>Edibles</h3>
+                    <p>Delicious, discreet, and precisely dosed - our edibles selection offers something for every palate and preference. From sweet treats to savory snacks, enjoy cannabis in its most tasty forms.</p>
+                    <p>All our edibles are lab-tested to ensure accurate dosing and consistent experiences. Perfect for those who prefer not to smoke or want longer-lasting effects.</p>
+                    <ul class="product-list">
+                        <li>Gummies - Fruit-flavored with precise 5-10mg doses</li>
+                        <li>Chocolates - Artisan-crafted with premium ingredients</li>
+                        <li>Baked Goods - Cookies, brownies, and other classics</li>
+                        <li>Beverages - THC-infused drinks for refreshing effects</li>
+                        <li>Mints & Lozenges - Fast-acting sublingual options</li>
+                        <li>Savory Snacks - Cannabis-infused chips and crackers</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZqx1lfLCxoHGElpHh1viGvCZ7SOp7VJiexQGNCyQYrPASOPcAL-ObY-FyIymY98TpfhcIO_5lZNCVE3Fgm1fSTMr0DlxFH7X-pnbwrKRf8kDs8FT4KDMWoOoMKXV1z_c5oRILvOOF_nfVJtM6tL8ARLy1rUPrhpvF67o7PIWgO4remDg19KUrJnePbFZh/s2880/Edibles.webp" alt="Cannabis Edibles">
+                </div>
+            </div>
+            
+            <!-- Topicals -->
+            <div class="service-category">
+                <div class="service-content">
+                    <h3>Topicals</h3>
+                    <p>Experience targeted relief with our premium cannabis-infused topicals. These products are designed for external use, providing localized benefits without psychoactive effects.</p>
+                    <p>Ideal for sore muscles, joint pain, and skin conditions, our topicals combine cannabis with other beneficial ingredients for maximum effectiveness.</p>
+                    <ul class="product-list">
+                        <li>Balms & Salves - Deep-penetrating pain relief formulas</li>
+                        <li>Lotions - Moisturizing with CBD for skin health</li>
+                        <li>Bath Soaks - Relaxing mineral and cannabis blends</li>
+                        <li>Transdermal Patches - Long-lasting, controlled release</li>
+                        <li>Massage Oils - Perfect for therapeutic bodywork</li>
+                        <li>Roll-Ons - Convenient targeted application</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWj1M38HayNTzxfUbH5Rltl_ub1r3CXGOuR-sHxuKqSwu78SVFXOoU_rmfYdLiX90f4zlIh3tNcKsSdxMMOHPbULAZH_tr4haKS2mNPj-ENoWAyeqkckqUmvyVQO29pg7dpEZtedyjLLASzNs3GkBNUtQhpEddse8V-fq6jzlmMyNb1Z6wL2A6S3t1wyi_/s2560/Topicals.jpg" alt="Cannabis Topicals">
+                </div>
+            </div>
+            
+            <!-- CBD -->
+            <div class="service-category">
+                <div class="service-content">
+                    <h3>CBD Products</h3>
+                    <p>Discover the therapeutic benefits of CBD without intense psychoactive effects. Our CBD selection includes high-quality products derived from hemp and cannabis plants.</p>
+                    <p>Whether you're seeking relief from anxiety, pain, or inflammation, our CBD products offer a natural alternative with various consumption methods.</p>
+                    <ul class="product-list">
+                        <li>Full-Spectrum CBD Oil - Contains all beneficial cannabinoids</li>
+                        <li>CBD Isolate - Pure CBD without other compounds</li>
+                        <li>CBD Capsules - Precisely dosed and convenient</li>
+                        <li>CBD Gummies - Tasty way to consume CBD</li>
+                        <li>CBD Topicals - Targeted relief for muscles and joints</li>
+                        <li>CBD Vape Cartridges - Fast-acting inhalation method</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimvAQ_F8pStU5RSQCkuLH3bw2ejyoodSHCoulYZ6IgQ-LU06lSwZ761NjwdDiHnNa6VB2lq47cqGcyJSC16jxzkU-Gx7-LtdviTLJBbPMOoDx_YATHwgJu1ukIykuQbD6vOh-3DwF-E7Fw9ifMqMdyi7lFkisc-XZRc9H_s3k7_ovNKZStH25yrbm5sUWV/s1800/CBD.jpg" alt="CBD Products">
+                </div>
+            </div>
+            
+            <!-- Apparel -->
+            <div class="service-category">
+                <div class="service-content">
+                    <h3>Apparel</h3>
+                    <p>Show your cannabis pride with our stylish and comfortable apparel collection. From casual wear to statement pieces, we offer clothing for every cannabis enthusiast.</p>
+                    <p>All our apparel is made from high-quality materials and features unique designs that celebrate cannabis culture while maintaining a fashionable aesthetic.</p>
+                    <ul class="product-list">
+                        <li>T-Shirts - Comfortable cotton with cannabis-inspired designs</li>
+                        <li>Hoodies & Sweatshirts - Cozy options for cooler weather</li>
+                        <li>Hats - Snapbacks, beanies, and more</li>
+                        <li>Accessories - Socks, bags, and other cannabis-themed items</li>
+                        <li>Limited Edition Collections - Exclusive designs</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjN5cSH6CuizAbviZneKbS8DkyRRBDgsWydpVvh42B_31I3gcUGzy41M5u2Wt5qY_UO0f2h7DUuKryg3JzYrusM0gvppjnAwkLCIvBMMmyWFJZaTU1bsrVHlpoDYXdxychFvNUyvh0trGUa7aWHX4sj2hn0oPJ4SYJAJoSqf5ag8lkMgerRbyeqoFhA_N2z/s1921/Apparel.jpg" alt="Cannabis Apparel">
+                </div>
+            </div>
+            
+            <!-- Accessories -->
+            <div class="service-category">
+                <div class="service-content">
+                    <h3>Accessories</h3>
+                    <p>Complete your cannabis experience with our premium selection of accessories. From functional tools to artistic pieces, we have everything you need to enhance your sessions.</p>
+                    <p>We carry only the highest quality accessories from trusted brands, ensuring durability, functionality, and style.</p>
+                    <ul class="product-list">
+                        <li>Glass Pipes & Bongs - Handcrafted by skilled artisans</li>
+                        <li>Vaporizers - Portable and desktop options</li>
+                        <li>Grinders - Multi-chamber designs for perfect consistency</li>
+                        <li>Storage Solutions - Smell-proof and secure containers</li>
+                        <li>Rolling Supplies - Papers, tips, and trays</li>
+                        <li>Cleaning Kits - Keep your pieces in perfect condition</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjT1ZRsblWviC5yB38JW2-i1TiVbjRl6q2ph4f72x4Oze4tVttA1w7Fh5omBRR9Oohq7GetWgCjFUE5lHRXJ-VzZbxnDX96-TSgEk-vXn2vK1b4Jst_obot2nvxnobQ1L0D9GyOkN4PsODwofgxyWFFUnkyVkdZo8fVYSOcCbm6XL2ScsqYo25m2t_SHRwN/s1273/Accessories.jpg" alt="Cannabis Accessories">
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <h3>Ready to Explore Our Products?</h3>
+                <p>Visit our Anchorage dispensary to experience Alaska's finest cannabis selection with expert guidance from our knowledgeable staff.</p>
+                <a href="index.html#contact" class="btn">Visit Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-text">
+                        <p>Lovely layout!  The shop is very open with its display of products!  They have some of the best prices on in-house flower, and the staff is very knowledgeable!</p>
+                    </div>
+                    <div class="testimonial-author">nancy krebs.</div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        <p>The employees here are awesome! So personable and friendly. Quality products without breaking your wallet. Special shoutout to Christopher D. One of the friendliest people I’ve met! Truly touched me with his kindness. Definitely a permanent customer.</p>
+                    </div>
+                    <div class="testimonial-author">Emma</div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        <p>I recently visited Alaska Cannabis Exchange, and my experience was quite remarkable. The shop had a welcoming atmosphere with knowledgeable staff ready to assist. The selection of products was diverse, catering to both new and experienced users.</p>
+                    </div>
+                    <div class="testimonial-author">Kristian Washington</div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <div class="slider-dot active" data-index="0"></div>
+                    <div class="slider-dot" data-index="1"></div>
+                    <div class="slider-dot" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr style="border: none; border-top: 2px solid #001F3F; margin: 2rem 0;" />
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Alaska Cannabis Exchange</h3>
+                    <p>Anchorage's premier destination for high-quality cannabis products and expert guidance. Serving the community with integrity since 2016.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="services.html">Products</a></li>
+                        <li><a href="index.html#testimonials">Reviews</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Concentrates</a></li>
+                        <li><a href="services.html">Edibles</a></li>
+                        <li><a href="services.html">Topicals</a></li>
+                        <li><a href="services.html">CBD</a></li>
+                        <li><a href="services.html">Apparel</a></li>
+                        <li><a href="services.html">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Reach Out to Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">2906 Spenard Rd
+
+Anchorage, AK 99503</a></li>
+                        <li><a href="#">(907) 301-4208y</a></li>
+                        <li><a href="#">Open 7 Days a Week</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Alaska Cannabis Exchange. All rights reserved. For adults 21+ only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('main-nav');
+        
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            hamburger.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Testimonial slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                showTestimonial(index);
+            });
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            let nextTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(nextTestimonial);
+        }, 5000);
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
