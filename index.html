@@ -132,7 +132,16 @@
     padding: 15px 20px;
     height: 80px;
 }
-    
+    <script>
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const fadePoint = 300; // adjust to control fade speed
+    const opacity = Math.max(1 - scrollY / fadePoint, 0);
+    header.style.opacity = opacity;
+  });
+</script>
         
         .logo {
             display: flex;
@@ -1142,6 +1151,7 @@ Anchorage, AK 99503</a></li>
 </body>
 
 </html>
+
 
 
 
