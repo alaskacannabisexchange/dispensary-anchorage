@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cannabis Education & News | Alaska Cannabis Exchange</title>
+    <title>Understanding Cannabis Products | Alaska Cannabis Exchange</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reusing your existing styles */
         :root {
             --primary: #1a3e2f;
             --secondary: #4a6b5b;
@@ -39,11 +38,11 @@
             font-weight: 600;
             line-height: 1.2;
             margin-bottom: 1rem;
-            color: var(--primary);
+            color: var(--white);
         }
         
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         a {
@@ -85,11 +84,7 @@
             color: white;
         }
         
-        section {
-            padding: 100px 0;
-        }
-        
-        /* Header Styles (same as main site) */
+        /* Header Styles */
         header {
             position: fixed;
             top: 0;
@@ -170,162 +165,128 @@
             color: var(--primary);
         }
         
-        /* Blog Hero Section */
-        .blog-hero {
-            height: 50vh;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjT1ZRsblWviC5yB38JW2-i1TiVbjRl6q2ph4f72x4Oze4tVttA1w7Fh5omBRR9Oohq7GetWgCjFUE5lHRXJ-VzZbxnDX96-TSgEk-vXn2vK1b4Jst_obot2nvxnobQ1L0D9GyOkN4PsODwofgxyWFFUnkyVkdZo8fVYSOcCbm6XL2ScsqYo25m2t_SHRwN/s1273/Accessories.jpg') no-repeat center center/cover;
+        /* Article Hero */
+        .article-hero {
+            padding: 180px 0 80px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgH2vXECWSbmlJTbZC7i8PdDFXg4ktNBpBVFyQKZX7zatEeFXcaI1Z9EohaV1TyiqhTtUD0hqkTi7URbSd1j_4Ut8-1Owo-LnK5GqGdm6JwpnOAfOHd9b5lNRM_4aSdeGkD9rowqYm3MARGLijD03DnYyiS1xYJKsNk837iCx7Wx8omVOjZCH8htMHNKlXm/s6000/Shop%20Vape%20(1') no-repeat center center/cover;
             color: white;
             text-align: center;
-            padding-top: 80px;
         }
         
-        .blog-hero-content {
+        .article-hero-content {
             max-width: 800px;
             margin: 0 auto;
         }
         
-        .blog-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            letter-spacing: 1px;
-        }
-        
-        /* Blog Categories */
-        .blog-categories {
-            background-color: var(--light);
-            padding: 50px 0;
-        }
-        
-        .categories-container {
+        .article-meta {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-        }
-        
-        .category-btn {
-            padding: 12px 25px;
-            background-color: var(--background);
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid var(--accent);
-        }
-        
-        .category-btn:hover, .category-btn.active {
-            background-color: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        /* Blog Posts Grid */
-        .blog-posts {
-            background-color: var(--background);
-        }
-        
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .post-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .post-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .post-image {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .post-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .post-card:hover .post-image img {
-            transform: scale(1.1);
-        }
-        
-        .post-content {
-            padding: 30px;
-        }
-        
-        .post-meta {
-            display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: var(--secondary);
+            margin-bottom: 20px;
+            flex-wrap: wrap;
         }
         
-        .post-category {
+        .article-category {
             display: inline-block;
             padding: 5px 15px;
             background-color: var(--accent);
             border-radius: 30px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            margin-right: 15px;
+            margin-right: 20px;
+            color: var(--primary);
         }
         
-        .post-date {
+        .article-date {
             display: flex;
             align-items: center;
+            font-size: 0.9rem;
         }
         
-        .post-date i {
+        .article-date i {
             margin-right: 5px;
-            color: var(--highlight);
+            color: var(--accent);
         }
         
-        .post-excerpt {
+        /* Article Content */
+        .article-content {
+            background-color: var(--light);
+            padding: 60px 0;
+        }
+        
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-image {
+            width: 100%;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-body {
+            margin-top: 40px;
+        }
+        
+        .article-body h2 {
+            margin-top: 40px;
+            color: var(--primary);
+        }
+        
+        .article-body h3 {
+            margin-top: 30px;
+            color: var(--secondary);
+        }
+        
+        .article-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
             margin: 20px 0;
         }
         
-        /* Newsletter Section */
-        .newsletter {
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
+        /* Related Articles */
+        .related-articles {
+            background-color: var(--background);
+            padding: 80px 0;
         }
         
-        .newsletter-form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
         
-        .newsletter-input {
-            flex: 1;
-            min-width: 250px;
-            padding: 15px;
-            border: none;
-            border-radius: 4px;
-            font-family: inherit;
+        .related-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
         }
-         /* Footer */
+        
+        .related-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .related-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .related-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .related-content {
+            padding: 20px;
+        }
+                /* Footer */
         footer {
             background-color: var(--primary);
             color: white;
@@ -415,10 +376,11 @@
             font-size: 0.9rem;
         }
         
+        
         /* Responsive Styles */
         @media (max-width: 768px) {
-            .blog-hero h1 {
-                font-size: 2.5rem;
+            .header-container {
+                padding: 15px;
             }
             
             .hamburger {
@@ -450,8 +412,17 @@
                 margin: 15px 0;
             }
             
-            .post-content {
-                padding: 20px;
+            .article-hero {
+                padding: 150px 0 60px;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .article-category {
+                margin-right: 0;
             }
         }
     </style>
@@ -469,7 +440,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="blog.html" class="active">Education</a></li>
+                    <li><a href="blog.html">Education</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -479,56 +450,139 @@
         </div>
     </header>
 
-    <!-- Blog Hero Section -->
-    <section class="blog-hero">
-        <div class="blog-hero-content container">
-            <h1>Cannabis Education & News</h1>
-            <p style="font-size: 1.2rem; color: var(--accent);">Your trusted source for cannabis knowledge in Alaska</p>
+    <!-- Article Hero -->
+    <section class="article-hero">
+        <div class="article-hero-content container">
+            <div class="article-meta">
+                <span class="article-category">Beginner's Guide</span>
+                <span class="article-date"><i class="far fa-calendar-alt"></i> June 15, 2023</span>
+            </div>
+            <h1>Understanding Cannabis Products: A Complete Guide</h1>
         </div>
     </section>
 
-    <!-- Blog Categories -->
-    <section class="blog-categories">
-        <div class="container">
-            <div class="categories-container">
-                <a href="#" class="category-btn active">All Articles</a>
-                <a href="#" class="category-btn">Beginner's Guide</a>
-                <a href="#" class="category-btn">Medical Cannabis</a>
-                <a href="#" class="category-btn">Product Guides</a>
-                <a href="#" class="category-btn">Industry News</a>
-                <a href="#" class="category-btn">Alaska Laws</a>
+    <!-- Article Content -->
+    <section class="article-content">
+        <div class="article-container container">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgH2vXECWSbmlJTbZC7i8PdDFXg4ktNBpBVFyQKZX7zatEeFXcaI1Z9EohaV1TyiqhTtUD0hqkTi7URbSd1j_4Ut8-1Owo-LnK5GqGdm6JwpnOAfOHd9b5lNRM_4aSdeGkD9rowqYm3MARGLijD03DnYyiS1xYJKsNk837iCx7Wx8omVOjZCH8htMHNKlXm/s6000/Shop%20Vape%20(1" alt="Cannabis Products" class="article-image">
+            
+            <div class="article-body">
+                <p>Welcome to Alaska Cannabis Exchange's comprehensive guide to understanding cannabis products. Whether you're new to cannabis or looking to expand your knowledge, this guide will help you navigate the various options available at our dispensary.</p>
+                
+                <h2>1. Cannabis Flower</h2>
+                <p>The most traditional form of cannabis, flower refers to the dried buds of the cannabis plant. At Alaska Cannabis Exchange, we carry three main types:</p>
+                
+                <h3>Indica</h3>
+                <p>Known for its relaxing effects, Indica strains are often used in the evening or for pain relief. Common effects include:</p>
+                <ul style="margin-bottom: 20px; padding-left: 20px;">
+                    <li>Full-body relaxation</li>
+                    <li>Reduced pain and inflammation</li>
+                    <li>Increased appetite</li>
+                    <li>Help with insomnia</li>
+                </ul>
+                
+                <h3>Sativa</h3>
+                <p>Sativa strains tend to provide more energizing effects, making them popular for daytime use:</p>
+                <ul style="margin-bottom: 20px; padding-left: 20px;">
+                    <li>Cerebral, uplifting effects</li>
+                    <li>Increased creativity and focus</li>
+                    <li>Reduced anxiety and stress</li>
+                    <li>Social engagement</li>
+                </ul>
+                
+                
+                
+                <h2>2. Cannabis Concentrates</h2>
+                <p>Concentrates are potent extracts that contain high levels of cannabinoids. Our dispensary offers several types:</p>
+                
+                <h3>Shatter</h3>
+                <p>A glass-like concentrate that "shatters" when broken. It's one of the purest forms with THC levels often exceeding 80%.</p>
+                
+                <h3>Wax</h3>
+                <p>With a consistency like candle wax, this concentrate is easier to handle than shatter and offers similar potency.</p>
+                
+                <h3>Live Resin</h3>
+                <p>Made from fresh-frozen cannabis plants, preserving more terpenes for enhanced flavor and aroma.</p>
+                
+                <h2>3. Edibles</h2>
+                <p>Cannabis-infused foods and drinks provide an alternative to smoking. Important considerations:</p>
+                
+                <ul style="margin-bottom: 20px; padding-left: 20px;">
+                    <li>Start with low doses (5-10mg THC)</li>
+                    <li>Effects take 30-90 minutes to appear</li>
+                    <li>Effects last 4-8 hours</li>
+                    <li>Store properly to maintain freshness</li>
+                </ul>
+                
+                <h2>4. Topicals</h2>
+                <p>Cannabis-infused lotions, balms, and oils that are applied directly to the skin. Benefits include:</p>
+                
+                <ul style="margin-bottom: 20px; padding-left: 20px;">
+                    <li>Localized pain relief</li>
+                    <li>Reduced inflammation</li>
+                    <li>No psychoactive effects (unless they contain THC)</li>
+                    <li>Great for arthritis and muscle soreness</li>
+                </ul>
+                
+                <h2>Choosing the Right Product</h2>
+                <p>Our knowledgeable budtenders can help you select the perfect product based on:</p>
+                
+                <ul style="margin-bottom: 20px; padding-left: 20px;">
+                    <li>Your desired effects</li>
+                    <li>Experience level</li>
+                    <li>Medical needs</li>
+                    <li>Preferred consumption method</li>
+                </ul>
+                
+                <p>Visit Alaska Cannabis Exchange at 2906 Spenard Rd in Anchorage to explore our full selection and receive personalized recommendations from our team.</p>
+                
+                <a href="products.html" class="btn">View Our Products</a>
             </div>
         </div>
     </section>
 
-    <!-- Blog Posts Grid -->
-    <section class="blog-posts">
+    <!-- Related Articles -->
+    <section class="related-articles">
         <div class="container">
-            <div class="posts-grid">
-                <!-- Single Article (as requested) -->
-                <div class="post-card">
-                    <div class="post-image">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgH2vXECWSbmlJTbZC7i8PdDFXg4ktNBpBVFyQKZX7zatEeFXcaI1Z9EohaV1TyiqhTtUD0hqkTi7URbSd1j_4Ut8-1Owo-LnK5GqGdm6JwpnOAfOHd9b5lNRM_4aSdeGkD9rowqYm3MARGLijD03DnYyiS1xYJKsNk837iCx7Wx8omVOjZCH8htMHNKlXm/s6000/Shop%20Vape%20(1" alt="Understanding Cannabis Products">
+            <h2 class="section-title">More Cannabis Guides</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <div class="related-image">
+                        <img src="https://images.unsplash.com/photo-1575425186775-b8de9a427e67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Edibles Guide">
                     </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span class="post-category" style="background-color: #e8c39e;">Beginner's Guide</span>
-                            <span class="post-date"><i class="far fa-calendar-alt"></i> June 15, 2023</span>
-                        </div>
-                        <h3>Understanding Cannabis Products: A Complete Guide</h3>
-                        <div class="post-excerpt">
-                            <p>Learn about the different types of cannabis products available at our dispensary, from flowers to edibles to concentrates. Our comprehensive guide helps you understand potency, effects, and proper usage for each product type.</p>
-                        </div>
-                        <a href="#" class="btn">Read More</a>
+                    <div class="related-content">
+                        <h3>Edibles 101: A Beginner's Guide</h3>
+                        <p>Learn everything you need to know before trying cannabis edibles for the first time.</p>
+                        <a href="#" class="btn" style="padding: 8px 15px; font-size: 0.8rem;">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="related-card">
+                    <div class="related-image">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="CBD Guide">
+                    </div>
+                    <div class="related-content">
+                        <h3>The Science Behind CBD</h3>
+                        <p>Explore the potential health benefits of CBD based on current scientific research.</p>
+                        <a href="#" class="btn" style="padding: 8px 15px; font-size: 0.8rem;">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="related-card">
+                    <div class="related-image">
+                        <img src="https://images.unsplash.com/photo-1599658880436-c61792e70672?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Concentrates Guide">
+                    </div>
+                    <div class="related-content">
+                        <h3>Understanding Cannabis Concentrates</h3>
+                        <p>Your complete guide to dabbing, vaping, and using cannabis concentrates.</p>
+                        <a href="#" class="btn" style="padding: 8px 15px; font-size: 0.8rem;">Read More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-  
-
-    <!-- Footer (from your landing page) -->
+    <!-- Footer -->
    <footer>
         <div class="container">
             <div class="footer-container">
@@ -598,17 +652,6 @@ Anchorage, AK 99503</a></li>
                     nav.classList.remove('active');
                     hamburger.innerHTML = '<i class="fas fa-bars"></i>';
                 }
-            });
-        });
-
-        // Category filter functionality
-        const categoryBtns = document.querySelectorAll('.category-btn');
-        categoryBtns.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                // Here you would typically filter the blog posts
             });
         });
     </script>
